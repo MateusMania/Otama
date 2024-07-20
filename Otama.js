@@ -1,57 +1,42 @@
-// A classe a seguir é responsavel por criar o tamagochi.
+let fome = 100;
+let diversao = 100;
+let sono = 100;
 
+function passartempo(tempo = 2){
+  if(fome <= 0 || diversao <= 0 || sono <= 0 ){
+    document.getElementById('tamagochiImage').src='dead.jpg';
+    document.getElementById('aviso').innerHTML = 'Seu Tamagochi Morreu!';
+    }
+  fome = fome - parseInt(tempo);
+  diversao = diversao - parseInt(tempo);
+  sono = sono - parseInt(tempo);
 
-class Tamagochi {
-  constructor(nome, ) {
-    this.nome = nome;
-    this.saciação = 100;
-    this.felicidade = 100;
-    this.energia = 100;
-    this.fome = 0;
-    this.tristeza = 0;
-    this.sono = 0;
-  }
-  alimentar() {
-    alert(`${this.nome} foi alimentado!`)
-  }
-  brincar() {
-    this.felicidade = Math.max()
-  }
-  dormir() {
-    this.sono = Math.max()
-  }
-  morte(){
-  }
+  document.getElementById('fome').innerHTML = fome + '%';
+  document.getElementById('diversao').innerHTML = diversao + '%';
+  document.getElementById('sono').innerHTML = sono + '%';
 }
 
-// Essa constante abaixo é responsavel por definir a criação do tamagochi.
 
-const tamagochi = new Tamagochi("Otama")
-
-
-// As funções abaixo executarão as ações do tamagochi e mudarão o gif do estado atual. 
-
-
-function alimentar(){
-  MudarGIF("pnd.jpeg");
-  tamagochi.alimentar();
+function start(){
+  let contartempo = setInterval(passartempo, 2700);
 }
+
+function comer(){
+  fome = 100;
+  document.getElementById('fome').innerHTML = fome + '%';
+  document.getElementById('fome').style.width = fome + 'px';
+}
+
 function brincar(){
-  MudarGIF("pnd.jpeg");
-  tamagochi.brincar()
+  diversao = 100;
+  document.getElementById('diversao').innerHTML = diversao + '%';
+  document.getElementById('diversao').style.width = diversao+ 'px';
 }
+
 function dormir(){
-  MudarGIF("pnd.jpeg");
-  tamagochi.dormir()
-}
-function morte(){
-  MudarGIF("pnd.jpeg");
-  tamagochi.morte()
+  sono = 100;
+  document.getElementById('sono').innerHTML = sono + '%';
+  document.getElementById('sono').style.width = sono + 'px';
 }
 
-// Essa função abaixo é responsavel por mudar o gif do tamagoch.
-
-function MudarGIF(filename) {
-  let img = document.querySelector("#tamagochiImage");
-  img.setAttribute("src", filename);
-}
+start();
