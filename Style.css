@@ -1,0 +1,63 @@
+body {
+  overflow: hidden;  
+}
+
+.tama {
+  border-radius: 10px;
+  width:250px;
+  height: 250px;
+}
+
+
+#tama {
+  border-radius: 30px;
+  position:relative;
+  align-self: center;
+  
+}
+
+.bloco {
+  width: 100%;
+  height: 100%;
+}
+
+.botoes {
+  padding: 6px 50px;
+  background: #777;
+  color #f2f2f2;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.botoes:hover {
+  background-color: #357;
+}
+
+.botoes:active {
+  background-color: #777;
+}
+
+.barra {
+  width: 200px;
+  margin: 5px 10px;
+  border: 1px solid #000;;
+  border-radius: 4px;
+  padding: 4px 4 px;
+  text-align: center;
+}
+
+.Status {
+  padding-left: 50%;
+  margin: 5px 10px;
+  width: 120px;
+}
+
+#botoes {
+  padding: 220px 0px;
+}
+
+#aviso {
+  color: red;
+  font-size: 30px;  
+}
